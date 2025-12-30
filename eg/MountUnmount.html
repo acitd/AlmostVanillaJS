@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>body,div{border:1px solid;padding:10px}</style>
+		<script type="module">
+			import{startMountUnmount}from'https://cdn.jsdelivr.net/gh/acitd/AlmostVanillaJS/src/MountUnmount.js';
+			startMountUnmount();
+			
+			globalThis.createDiv=()=>{
+				const div=document.createElement('div');
+				div.textContent='Div from JS';
+				div.onmount=function(){
+					console.log('Div mounted from JS');
+				};
+				div.onunmount=function(){
+					console.log('Div unmounted from JS');
+				};
+				div.onclick=function(){
+					this.remove();
+				};
+				section.appendChild(div);
+			};
+		</script>
+	</head>
+	<body>
+		<section id="section">
+			<div
+				onmount="console.log('Div mounted from HTML')"
+				onunmount="console.log('Div unmounted from HTML')"
+				onclick="this.remove()"
+			>Div from HTML</div>
+		</section>
+		<br>
+		<button onclick="createDiv()">CREATE DIV</button>
+	</body>
+</html>
