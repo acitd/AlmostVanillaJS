@@ -26,8 +26,6 @@ Supports:
 * `element.onmount = fn`
 * Listening to CustomEvents (`mount` / `unmount`)
 
----
-
 ## Usage
 
 ### Start the lifecycle observer
@@ -37,8 +35,6 @@ import {startMountUnmount,stopMountUnmount} from 'https://cdn.jsdelivr.net/gh/ac
 startMountUnmount();
 ```
 
----
-
 ### Add hooks with attributes
 
 ```html
@@ -47,9 +43,6 @@ startMountUnmount();
   onunmount="console.log('unmounted', this)"
 >Hello World</div>
 ```
-
----
-
 ### Or assign functions in JS
 
 ```js
@@ -64,8 +57,6 @@ document.body.appendChild(el);
 
 ```
 
----
-
 ### Or listen for events
 
 ```js
@@ -77,7 +68,6 @@ document.addEventListener('unmount', e => {
   console.log('Unmounted via event:', e.detail.element);
 });
 ```
----
 
 ## Stopping the system
 
@@ -91,8 +81,6 @@ stopMountUnmount();
 
 Frameworks give you lifecycle & visibility tools. the platform does not.  
 AlmostVanillaJS brings **just enough magic** without taking control of your app.
-
----
 
 # License
 Author: Alex Costantino (acitd.com)  
